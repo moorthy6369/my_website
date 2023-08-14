@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #dbutton {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            color: red;
+            font-weight: 800;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-shadow: rgb(26 37 68 / 75%) 0 7px 28px;
+        }
+    </style>
+    <center>
+        <p>Download will not start click downlad button</p><br>
+
+        <div id="dbuttons">
+            loading...
+        </div><br><br><br>
+        <a onclick="gbacklink1()"
+            style="cursor:pointer;color: blue;background-color: chartreuse;padding: 5px;border-radius: 5px;">GO BACK
+            (OR) COLSE TAB</a>
+    </center>
+    <script>
+        //?q=p1s1n
+        var domainp = "https://allinonestar143.blogspot.com";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const durl = urlParams.get('url');
+        var r=Number(durl.slice(durl.lastIndexOf("r") + 1, durl.lastIndexOf("c")));
+        var c=Number(durl.slice(durl.lastIndexOf("c") + 1));
+        const typ = urlParams.get("ql");
+        const ray = urlParams.get("ray");
+        const Id = ray;
+        const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+        const Name = 'some';
+        const query = encodeURIComponent('Select *');
+        const url = `${base}&sheet=${Name}&tq=${query}`;
+        document.addEventListener('DOMContentLoaded', init);
+        function init() {
+            fetch(url)
+                .then(res => res.text())
+                .then(rep => {
+                    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                    var vdindex = ['GRM STUDIO'];
+                    var mlinks = jsonData.table.rows[r].c[c].v.slice(0, 13) == "https://drive" ? 'https://docs.google.com/uc?id=' + jsonData.table.rows[r].c[c].v.slice(32, 65) + '&export=download' : jsonData.table.rows[r].c[c].v;
+                    setTimeout(function () { document.getElementById("dbuttons").innerHTML = '<a href="' + mlinks + '" id="dbutton">Download<i class="lock open icon"></i></a>' }, 3000);
+                    window.open(domainp + "/p/fismdownload.html?url=" + durl+"&q1="+typ+"&ray="+ray, "_self");
+                });
+        };
+        function gbacklink1() {
+            bl = document.referrer;
+            bl1 = bl.slice(0, 36);
+            if (bl1 == domainp) {
+                return window.history.back();
+            }
+            else {
+                return window.open(domainp + "/p/latest-movie.html?q=" + typ, "_self");
+            };
+        };
+    </script>
+</body>
+
+</html>

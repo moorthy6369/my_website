@@ -1,0 +1,365 @@
+html{
+    scroll-behavior: smooth;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: white;
+}
+
+#text {
+    color: #000000;
+}
+
+/* UTILITIES */
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+#headline1 {
+    background-color: #a5a5a5;
+    color: #ffffff;
+    font-size: 30px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+    line-height: 50px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.headline2 {
+            font-weight: 800;
+            font-size: 16px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: sans-serif;
+        }
+
+.subscribe {
+    color: #000000;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.flexc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#subbutton {
+    color: #ffffff;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px red solid;
+}
+
+.paragraph {
+    color: #000000;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#paragraph {
+    color: #ffffff;
+    background-color: #1df0ff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px #1df0ff solid;
+}
+
+.moremodels {
+    color: #000000;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#moremodels {
+    color: #ffffff;
+    background-color: #1df0ff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px #1df0ff solid;
+}
+
+.mainbox {
+    width: -webkit-fill-available;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+#dbutton {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    color: red;
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: rgb(26 37 68 / 75%) 0 7px 28px;
+}
+
+#ffpets,
+#ffpets1,
+#ffpets2,
+#ffpets3,
+#ffpets4,
+#ffpets5 {
+    width: 400px;
+    margin-top: 20px;
+}
+
+
+#ffcharactershead,
+#ffpets12,
+#ffmaps1,
+#ffGuns1,
+#ffemotes1,
+#ffvehicles1 {
+    background-color: #346c54;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    color: white;
+    padding: 18px;
+    width: -webkit-fill-available;
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+.collapsible,
+.collapsible1,
+.collapsible2,
+.collapsible3,
+.collapsible4,
+.collapsible5 {
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: -webkit-fill-available;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.container1 {
+    width: -webkit-fill-available;
+}
+
+.containera {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.headline {
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+.charactertitele {
+    color: #818308;
+    text-align: center;
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+.contentdis {
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.sharebtn {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px #f2f2f2 solid;
+    border-radius: 5px;
+    background-color: #b3b3b3;
+}
+
+#sharebtn {
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.checkboxtoggle {
+    font-size: large;
+    margin: 20px;
+    display: block;
+    text-align: center;
+    background-color: #3396b1;
+    width: fit-content;
+    padding: 10px;
+    border: 5px #3396b1 solid;
+    font-family: system-ui;
+    color: white;
+    border-radius: 5px;
+}
+
+#downloadbutton {
+    display: none;
+}
+
+input[type=checkbox]:checked~#downloadbutton {
+    display: block;
+}
+
+#iframe1 {
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 1/1;
+}
+
+.iframe {
+    width: 500px;
+    height: 500px;
+}
+
+.headline {
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+#headline {
+    background-color: #a5a5a5;
+    color: #ffffff;
+    font-size: 30px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+    line-height: 50px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.urlstop::before {
+    content: '\261E';
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+input[type=checkbox]:checked~.urlstop::before {
+    content: "\261F";
+}
+
+.sitemap {
+    margin: 15px;
+}
+
+.topick {
+    margin: 10px 0px;
+}
+
+.flexl {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+.urlstop {
+    cursor: pointer;
+    color: red;
+}
+
+.listurls {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    padding: 10px 1px;
+    color: blue;
+}
+
+.dot {
+    font-weight: 700;
+}
+
+.ytvideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 95%;
+    margin: auto;
+}
+
+.ytvideothambnail {
+    width: -webkit-fill-available;
+    position: relative;
+}
+
+.ytvideoplaybutton {
+    position: absolute;
+}
+
+.ytvideoplaybutton1 {
+    width: 80px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    #ffcharacters {
+        border: #000000 1px solid;
+        width: -webkit-fill-available;
+    }
+
+    #ffpets,
+    #ffpets1,
+    #ffpets2,
+    #ffpets3,
+    #ffpets4,
+    #ffpets5 {
+        margin-top: 15px;
+        width: -webkit-fill-available;
+    }
+
+    .iframe {
+        width: -webkit-fill-available;
+        height: 250px;
+    }
+}

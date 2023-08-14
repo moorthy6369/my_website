@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        #dbutton {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            color: red;
+            font-weight: 800;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-shadow: rgb(26 37 68 / 75%) 0 7px 28px;
+        }
+    </style>
+    <center>
+        <p>if download is not automatic start click downlad button to download movie.</p><br>
+
+        <div id="dbuttons">
+            loading...
+        </div><br><br><br><p>
+            Download is, if not start.<br>please command the movie name on telegram.
+        </p>
+        <a href="https://t.me/+0ufXobgLioU3NDU1" style="cursor:pointer;color: rgb(255, 0, 0);background-color: rgb(0, 255, 234);padding: 5px;border-radius: 5px;">Go to telegram <i class="telegram"></i></a><br><br>
+        <a onclick="gbacklink1()"
+            style="cursor:pointer;color: blue;background-color: chartreuse;padding: 5px;border-radius: 5px;">GO BACK
+            (OR) COLSE TAB</a>
+    </center>
+    <script>
+        //?url=r1c8&ql=p1n1s&ray=1k-8nRyN8M9-6nbBKb9MtiCBGh9jUBJH4aRsZd86iBRA
+        var domainp = "https://allinonestar143.blogspot.com";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const durl = urlParams.get('url');
+        var r = Number(durl.slice(durl.lastIndexOf("r") + 1, durl.lastIndexOf("c")));
+        var c = Number(durl.slice(durl.lastIndexOf("c") + 1));
+        const typ = urlParams.get("ql");
+        const ray = urlParams.get("ray");
+        const Id = ray;
+        const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+        const Name = 'some';
+        const query = encodeURIComponent('Select *');
+        const url = `${base}&sheet=${Name}&tq=${query}`;
+        document.addEventListener('DOMContentLoaded', init);
+        function init() {
+            fetch(url)
+                .then(res => res.text())
+                .then(rep => {
+                    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                    const idas = jsonData.table.rows[r].c[7].v.slice(jsonData.table.rows[r].c[7].v.lastIndexOf("?") + 1);
+                    if (jsonData.table.rows[r].c[c].v.slice(0, 13) == "https://drive") {
+                        let mlinks = 'https://docs.google.com/uc?id=' + jsonData.table.rows[r].c[c].v.slice(32, 65) + '&export=download';
+                        setTimeout(function () { document.getElementById("dbuttons").innerHTML = '<a href="' + mlinks + '" id="dbutton">Download<i class="lock open icon"></i></a>' }, 3000);
+                        window.open(mlinks, "_self");
+                    } else {
+                        $.ajax({
+                            url: 'https://api.allorigins.win/raw?url=https://vembx.one/embed-' + idas + '.html',
+                            dataType: 'html',
+                            success: function (response) {
+                                var html = $.parseHTML(response);
+                                const myString = String(response);
+                                const urls1 = myString.split('https');
+                                var urlset = [];
+                                var qlsc=[]
+                                console.log(myString);
+                                myStringd = myString.slice(66, 72)
+                                //console.log(myString);
+
+                                if (myStringd == 'center') {
+                                    document.getElementById("dbuttons").innerHTML = 'This file is Unavailable or expired';
+                                }else{
+                                    console.log('no');
+                                };
+                                for (let i = 4; 6 >= i; i++) {
+                                    let qua=urls1[i].lastIndexOf('label');
+                                    var obg = {
+                                        ql: Number(urls1[i].slice(urls1[i].lastIndexOf('label') + 7, urls1[i].lastIndexOf('label') + 10)),
+                                        li: "https" + urls1[i].slice(0, urls1[i].lastIndexOf('mp4') + 3)
+                                    };
+                                    qua == -1 ? "":urlset[i]=obg, qlsc.push(obg.ql+String(i));
+                                };
+                                var newUrl="";
+                                switch (c) {
+                                    case 8:
+                                        checkq=(ql)=>{return Number(ql)<=3805}
+                                        let yp=qlsc.filter(checkq);
+                                        let op = yp[0].slice(yp[0].length-1);
+                                        newUrl = urlset[op].li
+                                    break;
+                                    case 9:
+                                        checkq=(ql)=>{return Number(ql)<=5005}
+                                        let yp1=qlsc.filter(checkq);
+                                        let op1 = yp1[0].slice(yp1[0].length-1);
+                                        newUrl = urlset[op1].li
+                                    break;
+                                    case 10:
+                                        checkq=(ql)=>{return Number(ql)<=8005}
+                                        let yp2=qlsc.filter(checkq);
+                                        let op2 = yp2[0].slice(yp2[0].length-1);
+                                        newUrl = urlset[op2].li
+                                    break;
+                                };
+                                // console.log(newUrl);
+                                
+                                setTimeout(function () { document.getElementById("dbuttons").innerHTML = '<a href="' + newUrl + '" download="ramu.mp4" id="dbutton">Download<i class="lock open icon"></i></a>' }, 3000);
+                                window.open(newUrl, "_self");
+                            },
+                            error: function (xhr, status, error) {
+                                console.log('server error', error);
+                                document.getElementById("dbuttons").innerHTML = 'server error';
+                            }
+                        });
+                    };
+                });
+        };
+        function gbacklink1() {
+            bl = document.referrer;
+            bl1 = bl.slice(0, 36);
+            if (bl1 == domainp) {
+                return window.history.back();
+            }
+            else {
+                return window.open(domainp + "/p/latest-movie.html?q=" + typ, "_self");
+            };
+        };
+    </script>
+</body>
+
+</html>

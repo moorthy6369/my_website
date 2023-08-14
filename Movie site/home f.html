@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            line-height: 1.15;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 12.0px;
+            line-height: 1.5;
+            height: 100%;
+            margin: 0;
+        }
+
+        .headline2 {
+            font-weight: 800;
+            font-size: 16px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui breadcrumb">
+        <div class="active section">Home</div>
+        <i class="right angle icon divider"></i>
+        <!-- <a class="section">Store</a>
+        <i class="right angle icon divider"></i>
+        <div class="active section">T-Shirt</div>-->
+    </div>
+    <hr />
+    <div style="width: -webkit-fill-available;" class="ui centered banner test ad"></div>
+    <div>
+    <div>
+        <div class="headline2">
+            <span style="padding-bottom: 10px;"><strong>TAMIL NEW RELEASES</strong></span><br />
+            <img src="Daco_123427.png" width="70%">
+        </div>
+        <div id="main_content">
+            <div class="ui segment">
+
+                <div class="ui active inverted dimmer">
+
+                    <div class="ui medium text loader">Content Loading</div>
+
+                </div>
+
+                <br /><br /><br /><br /><br /><br /><br /><br />
+
+            </div>
+        </div>
+        <div id="more_bt" style=" text-align: center; margin: 10px auto; display: none;">
+            <strong><a href="#"><span style="color: black;">[</span> <span style="color: #2f00fa;text-decoration: underline;">SEE MORE</span> <span style="color: black;">]</span></a></strong>
+        </div>
+    </div>
+
+
+    <script>
+        var domain_name = "https://allinonestar143.blogspot.com";
+        const Id = `1k-8nRyN8M9-6nbBKb9MtiCBGh9jUBJH4aRsZd86iBRA`;
+        const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+        const Name = 'some';
+        const query = encodeURIComponent('Select *');
+        const url = `${base}` + `sheet=${Name}` + `tq=${query}`;
+        function init() {
+            fetch(url)
+                .then(res => res.text())
+                .then(rep => {
+                    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                    var plength = jsonData.table.rows.length;
+                    function sgv(a, b) {
+                        return jsonData.table.rows[a].c[b].v
+                    };
+                    //https://allinonestar143.blogspot.com/p/download.html?q=mnweao12p1s85nqwetr
+                    //console.log(ql)
+                    //i = plength - 1; plength - 30 < i; i--
+                    let x = [];
+                    for (i = 1; plength > i; i++) {
+                        let yu = []; let ql = "";
+                        let yup; try { yup = jsonData.table.rows[i].c[8].v; } catch { }; yup === undefined || yup === null ? "#" : yu.push("[SD 360p]");
+                        let yup1; try { yup1 = jsonData.table.rows[i].c[9].v; } catch { }; yup1 === undefined || yup1 === null ? "#" : yu.push("[HQ 480p]");
+                        let yup2; try { yup2 = jsonData.table.rows[i].c[10].v; } catch { }; yup2 === undefined || yup2 === null ? "#" : yu.push("[HD 720p]");
+                        let yup3; try { yup3 = jsonData.table.rows[i].c[11].v; } catch { }; yup3 === undefined || yup3 === null ? "#" : yu.push("[FHD 1080p]");
+                        for (u = 0; u < yu.length; u++) {
+                            ql += yu[u] + " & ";
+                        };
+                        let mn = sgv(i, 1);
+                        let sql = sgv(i, 3)
+                        let gl = domain_name + "/p/download.html?q=mnweao12p1s" + sgv(i, 0) + "nqwetr"
+                        x.push('<li><strong><span style="color:#000000;">' + mn + ' _ ' + 'Tamil' + sql + '</span> ~ <span style="color:#0000ff;text-decoration: underline;"><a href="' + gl + '">' + ql + '</a></span></strong></li>')
+                    };
+                    let text = "";
+                    for (let i = 0; i < x.length; i++) {
+                        text += x[i] + "<br />";
+                    };
+                    document.getElementById("main_content").innerHTML = text;
+                    document.getElementById("more_bt").style.display="block";
+                });
+        };
+
+        init();
+// console.clear();
+    </script>
+</body>
+
+</html>

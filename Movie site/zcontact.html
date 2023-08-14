@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contect BLR</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #text{
+            color: #000000;
+        }
+
+        /* UTILITIES */
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* NAVBAR STYLING STARTS */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px;
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+            color: #fff;
+            width: -webkit-fill-available;
+        }
+
+        .nav-links a {
+            color: #fff;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        /* NAVBAR MENU */
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+
+        .menu li:hover {
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .menu li {
+            padding: 5px 14px;
+        }
+
+        /* DROPDOWN MENU */
+        .services {
+            position: relative;
+        }
+
+        .dropdown {
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 30px;
+        }
+
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+
+        .dropdown li:hover {
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+        }
+
+        .services:hover .dropdown {
+            display: block;
+        }
+
+        /*RESPONSIVE NAVBAR MENU STARTS*/
+        /* CHECKBOX HACK */
+        input[type=checkbox] {
+            display: none;
+        }
+
+        /*HAMBURGER MENU*/
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            font-weight: 999;
+            user-select: none;
+            margin-right: 20px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #000000;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+
+        .checkboxtoggle {
+            font-size: large;
+            margin: 20px;
+            display: block;
+            text-align: center;
+            background-color: #3396b1;
+            width: fit-content;
+            padding: 10px;
+            border: 5px #3396b1 solid;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #close-button {
+            display: none;
+        }
+
+        input[type=checkbox]:checked~#close-button {
+            display: block;
+        }
+
+        input[type=checkbox]:checked~#menu {
+            display: none;
+        }
+
+        /* APPLYING MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+                right: 0;
+                left: 0;
+                text-align: center;
+                padding: 16px 0;
+            }
+
+            .menu li:hover {
+                display: inline-block;
+                background-color: #4c9e9e;
+                transition: 0.3s ease;
+            }
+
+            .menu li+li {
+                margin-top: 12px;
+            }
+
+            input[type=checkbox]:checked~.menu {
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .dropdown {
+                left: -100%;
+                top: 30px;
+                transform: translateX(35%);
+                background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+            }
+
+            .dropdown li:hover {
+                background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 50%, #1FA2FF 100%);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(255, 251, 188); margin: 0;">
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo"><b>BLR TECH</b></div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger" id="close-button"
+                style="font-size: 45px; font-weight: 100; user-select: none; font-family: monospace;">x</label>
+            <label for="checkbox_toggle" id="menu" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a
+                        href="https://freefiregameevends.blogspot.com/2021/08/ramu-web-body-margin-left2-margin-right2_23.html">Home</a>
+                </li>
+                <li><a href="https://www.blogger.com/profile/16342420813573715956">About</a></li>
+                <li class="services">
+                    <a href="#">Services</a> <!-- DROPDOWN MENU -->
+                    <ul class="dropdown">
+                        <li><a href="#">Dropdown 1 </a></li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 3</a></li>
+                        <li><a href="#">Dropdown 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <!--contact form-->
+    <div id='ContactForm1' class='widget ContactForm'>
+
+        <div class='contact-form-widget' style="background-color: pink; margin-top: 0px; ">
+
+            <div class='form'>
+                <center>
+                    <fieldset style="background-color: pink;">
+                        <legend style="color: rgb(0, 0, 0); background-color: pink; border: 1PX black solid; ">contact:-
+                        </legend>
+                        <form name='contact-form'>
+                            <p>Name:</p>
+                            <input class='contact-form-name' style="width: 80%; color: rgb(0, 0, 0);"
+                                id='ContactForm1_contact-form-name' name='name' size='30' type='text' value=''
+                                placeholder="Your Name" />
+                            <p>E-mail: <span id="required">*</span></p>
+                            <input class='contact-form-email' style="width: 80%; color: rgb(0, 0, 0);"
+                                id='ContactForm1_contact-form-email' name='email' size='30' type='email' value=''
+                                placeholder="Your E-mail" />
+                            <p>Message: <span id="required">*</span></p>
+                            <textarea class='contact-form-email-message' style="width: 80%; color: rgb(0, 0, 0);"
+                                id='ContactForm1_contact-form-email-message' name='email-message' rows='5'
+                                placeholder="Type Your Massage"></textarea><br>
+                            <input class='contact-form-button contact-form-button-submit'
+                                id='ContactForm1_contact-form-submit'
+                                style="background-color: rgb(224, 36, 36); color: cornsilk; padding: 5px; width: 25%; margin-top: 5px;"
+                                type='button' value='Send' />
+                            <p class='contact-form-error-message' id='ContactForm1_contact-form-error-message'></p>
+                            <p class='contact-form-success-message' id='ContactForm1_contact-form-success-message'></p>
+                        </form>
+                    </fieldset>
+                </center>
+            </div>
+        </div>
+    </div>
+    <center>
+        <div>
+            <p>Contact With Telegram:-</p>
+            <a href="https://t.me/joinchat/RbLDBa1kL8Oi8YZi"><img style="width: 50px; height: auto;"
+                    src="https://docs.google.com/uc?id=1OegRwlzWitwKg2dwxyDb-o13-p7CsmWN"></a>
+        </div>
+        <div>
+            <p>Follow Us Instagrm:-</p>
+            <a href="https://www.instagram.com/blr_edits007?r=nametag"><img style="width: 50px; height: auto;"
+                    src="https://docs.google.com/uc?id=1GxK9GUMaYXZy41sPp4YYVXJ2lsU5hRx-"></a>
+        </div>
+        <div>
+            <p>Follow Us Facebook:-</p>
+            <a href="https://www.facebook.com/groups/3098973717056743/?ref=share"><img
+                    style="width: 50px; height: auto;"
+                    src="https://docs.google.com/uc?id=1HOgNFSxrypKvSUu0hvMVwpnX_BnfmuC5"></a>
+        </div>
+    </center>
+
+
+    <!--footer-->
+    <div style="background-color: #000000; border:1px groove  #000000;">
+        <center>
+            <p
+                style="color:#ffffff;font-size: 15px;padding-bottom:3px; cursor: pointer;text-decoration: none; text-decoration: none;">
+                <a href="https://www.blogger.com/profile/16342420813573715956" style="color: rgb(0, 238, 255);">About
+                    Us</a> ㅤㅤ
+                <a href="#"
+                    style="color: rgb(0, 238, 255);">Contact Us</a>ㅤㅤ
+                <a href="https://alonestaryt.blogspot.com/2022/05/privacy-policy.html"
+                    style="color: rgb(0, 238, 255);">PrivacyPolicy</a><br><br>
+                <a href="https://alonestaryt.blogspot.com/2022/05/terms-and-conditions.html"
+                    style="color: rgb(0, 238, 255);">Terms & Conditions</a>
+            </p>
+            <p style="color:#ffffff;font-size: 15px;padding-bottom:3px; cursor: pointer;text-decoration: none;">
+                Copyright©2022 AS YT 🔹 Powered By RAMU</p>
+        </center>
+    </div>
+</body>
+
+</html>

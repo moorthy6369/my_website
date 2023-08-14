@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <style>
+    #dbutton {
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 10px;
+      color: red;
+      font-weight: 800;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-shadow: rgb(26 37 68 / 75%) 0 7px 28px;
+    }
+  </style>
+  <center>
+    <div id="dbuttons" class="video-player">
+      <video width='100%' id="myVideo" controlsList="nodownload" controls>
+        Your browser does not support the video tag.
+      </video>
+      <a class="ui secondary basic button" onclick="vplay(8)">360 p</a>
+      <a id='p480'class="ui positive basic button" onclick="vplay(9)">480 p</a>
+      <a id='p720' class="ui negative basic button" onclick="vplay(10)">720 p</a>
+    </div><br />
+
+    <a href="https://t.me/+0ufXobgLioU3NDU1" style="cursor:pointer;color: rgb(255, 0, 0);background-color: rgb(0, 255, 234);padding: 5px;border-radius: 5px;">Go to telegram <i class="telegram"></i></a><br><br>
+    <a onclick="gbacklink1()" style="cursor:pointer;color: blue;background-color: chartreuse;padding: 5px;border-radius: 5px;">GO BACK
+      (OR) COLSE TAB</a>
+  </center>
+  <script>
+    //?url=r1c8&ql=p1n1s&ray=1k-8nRyN8M9-6nbBKb9MtiCBGh9jUBJH4aRsZd86iBRA
+    /*var domainp = "https://allinonestar143.blogspot.com";
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const durl = urlParams.get('url');
+    var r = Number(durl.slice(durl.lastIndexOf("r") + 1, durl.lastIndexOf("c")));
+    var c = Number(durl.slice(durl.lastIndexOf("c") + 1));
+    const typ = urlParams.get("ql");
+    const ray = urlParams.get("ray");*/
+
+    const typ = 'p1n1s'
+    const ray = '1k-8nRyN8M9-6nbBKb9MtiCBGh9jUBJH4aRsZd86iBRA';
+    var r = 152;
+    var c = 8;
+
+
+    const Id = ray;
+    const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+    const Name = 'some';
+    const query = encodeURIComponent('Select *');
+    const url = `${base}&sheet=${Name}&tq=${query}`;
+    //document.addEventListener('DOMContentLoaded', init);
+
+    function fetchdata() {
+      return fetch(url)
+        .then(res => res.text())
+        .then(rep => {
+          const jsonData = JSON.parse(rep.substring(47).slice(0, -2)).table;
+
+          if (jsonData.rows[r].c[c].v.slice(0, 13) == "https://drive") {
+            let mlinks = 'https://docs.google.com/uc?id=' + jsonData.rows[r].c[c].v.slice(32, 65);
+            // setTimeout(function() { document.getElementById("dbuttons").innerHTML = '<a href="' + mlinks + '" id="dbutton">Download<i class="lock open icon"></i></a>' }, 3000);
+            //window.open(mlinks, "_self");
+            document.getElementById("dbuttons").innerHTML = '<a href="' + mlinks + '" id="dbutton">Watch in Google drive</a>';
+            //console.log(mlinks)
+          };
+         
+          return jsonData;
+
+        });
+    };
+
+
+    function vplay(q) {
+      //console.log(q)
+        fetchdata().then(data => {
+          const idas = data.rows[r].c[7].v.slice(data.rows[r].c[7].v.lastIndexOf("?") + 1);
+          //console.log(data); // Use the fetched data array here
+
+          $.ajax({
+            url: 'https://api.allorigins.win/raw?url=https://vembx.one/embed-' + idas + '.html',
+            dataType: 'html',
+            success: function(response) {
+              var html = $.parseHTML(response);
+              const myString = String(response);
+              const urls1 = myString.split('https');
+              var urlset = [];
+              var qlsc = []
+              //console.log(urls1[1]);
+              //myStringd = myString.slice(66, 72)
+              //console.log(myString);
+
+              /* if (myStringd == 'center') {
+                 document.getElementById("dbuttons").innerHTML = 'This file is Unavailable or expired';
+               } else {
+                 console.log('no');
+               };*/
+              for (let i = 4; 6 >= i; i++) {
+                let qua = urls1[i].lastIndexOf('label');
+                var obg = {
+                  ql: Number(urls1[i].slice(urls1[i].lastIndexOf('label') + 7, urls1[i].lastIndexOf('label') + 10)),
+                  li: "https" + urls1[i].slice(0, urls1[i].lastIndexOf('mp4') + 3)
+                };
+                qua == -1 ? "" : urlset[i] = obg, qlsc.push(obg.ql + String(i));
+              };
+              console.log(urlset)
+              switch (urlset.length){
+                case 6:
+                  document.getElementById('p720').style.display='none';
+                  break;
+                case 5:
+                  document.getElementById('p720').style.display='none';
+                  document.getElementById('p480').style.display='none';
+                  break;
+              }
+              var newUrl = "";
+              switch (q) {
+                case 8:
+                  checkq = (ql) => { return Number(ql) <= 3805 }
+                  let yp = qlsc.filter(checkq);
+                  let op = yp[0].slice(yp[0].length - 1);
+                  newUrl = urlset[op].li
+                  break;
+                case 9:
+                  checkq = (ql) => { return Number(ql) <= 5005 }
+                  let yp1 = qlsc.filter(checkq);
+                  let op1 = yp1[0].slice(yp1[0].length - 1);
+                  newUrl = urlset[op1].li
+                  break;
+                case 10:
+                  checkq = (ql) => { return Number(ql) <= 8005 }
+                  let yp2 = qlsc.filter(checkq);
+                  let op2 = yp2[0].slice(yp2[0].length - 1);
+                  newUrl = urlset[op2].li
+                  break;
+              };
+              // console.log(newUrl);
+
+              //setTimeout(function() { document.getElementById("dbuttons").innerHTML = '<a href="' + newUrl + '" download="ramu.mp4" id="dbutton">Download<i class="lock open icon"></i></a>' }, 3000);
+              //window.open(newUrl, "_self");
+              document.getElementById("myVideo").src = newUrl;
+            },
+            error: function(xhr, status, error) {
+              console.log('server error', error);
+              document.getElementById("dbuttons").innerHTML = 'server error';
+            }
+          });
+        });
+    };
+    vplay(9);
+
+    function gbacklink1() {
+      bl = document.referrer;
+      bl1 = bl.slice(0, 36);
+      if (bl1 == domainp) {
+        return window.history.back();
+      }
+      else {
+        return window.open(domainp + "/p/latest-movie.html?q=" + typ, "_self");
+      };
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Enter page number:-<br>
+        <input id="pagenum" type="text"><br><br>
+        Enter movie index:-<br>
+        <input id="movieindex"><br><br>
+        <button onclick="load()">SUBMIT</button>
+    </div><br>
+    <div>
+        <button onclick="CopyToClipboard('text');return false;">Copy Text</button>
+        
+    </div>
+<pre id="text"><strong>🎯 Movie name :-<span id="title">name</span> 
+🔔#movie
+➖➖➖➖➖➖➖➖➖➖➖➖
+⏩ Available quality👇 : Exclusive 🔥<br>
+<span id="q1"></span>💥watch online🍿:-<span id="q2"></span>➖➖➖➖➖➖➖➖➖➖➖➖
+💿Latest movies hear:- http://bitly.ws/Q7Sj
+
+🎪Website home page:- http://bitly.ws/Q7T5
+➖➖➖➖➖➖➖➖➖➖➖➖
+💎You want any one movie comment here 👇
+https://t.me/+v1QF23f5YiFlMmY1
+➖➖➖➖➖➖➖➖➖➖➖➖
+<b>SHARE 📧 AND SPREAD YOUR MOVIE LOVER FRIENDS 🌍
+
+இந்த சேனல் எப்பொழுது வேண்டுமானாலும் copyright ©️ ஆல் ban ஆகலாம் ⚠️
+🙏please JOIN our main channel 👇
+https://t.me/+VE4O-8u-rvI2NjBl</b></strong></pre>
+    <img id="imdownload" style="width: 100%;">
+    <script>
+        function CopyToClipboard(id){
+            var r = document.createRange();
+            r.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        };
+        var domainp = "https://allinonestar143.blogspot.com";
+        //num2 =4;
+        function load() {
+            var num6 = Number(document.getElementById("pagenum").value);
+            var num2 = Number(document.getElementById("movieindex").value);
+
+            const shd = '1P3dHRKvAvIdJICfVNyvrwQdyESw6SKMzH0BmwRfdpU0';
+            const base10 = `https://docs.google.com/spreadsheets/d/${shd}/gviz/tq?`;
+            const she = 'sheet1';
+            const query10 = encodeURIComponent('Select *')
+            const url10 = `${base10}&sheet=${she}&tq=${query10}`
+            function init10() {
+                fetch(url10)
+                    .then(res => res.text())
+                    .then(rep => {
+                        //Remove additional text and extract only JSON:
+                        const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                        var pgid = jsonData.table.rows[num6].c[1].v;
+                        const Id = pgid;
+                        const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+                        const Name = 'some';
+                        const query = encodeURIComponent('Select *');
+                        const url = `${base}&sheet=${Name}&tq=${query}`;
+                        function init() {
+                            fetch(url)
+                                .then(res => res.text())
+                                .then(rep => {
+                                    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                                    var vdindex = ['GRM STUDIO'];
+                                    for (let i = 1; jsonData.table.rows.length > i; i++) {
+                                        vdindex.push(jsonData.table.rows[i].c[0].v);
+                                    };
+                                    num2 = vdindex.indexOf(num2);
+                                    var mtitle = jsonData.table.rows[num2].c[1].v;
+                                    document.getElementById("title").innerHTML = mtitle;
+                                    var dlinks = domainp + "/p/download.html?q=mnweao12p"+num6+"s" + jsonData.table.rows[num2].c[0].v + "nqwetr"
+                                    let yu = [];
+                                    let yup; try { yup = jsonData.table.rows[num2].c[8].v; } catch { }; yup === undefined || yup === null ? "#" : yu.push(8);
+                                    let yup1; try { yup1 = jsonData.table.rows[num2].c[9].v; } catch { }; yup1 === undefined || yup1 === null ? "#" : yu.push(9);
+                                    let yup2; try { yup2 = jsonData.table.rows[num2].c[10].v; } catch { }; yup2 === undefined || yup2 === null ? "#" : yu.push(10);
+                                    let yup3; try { yup3 = jsonData.table.rows[num2].c[11].v; } catch { }; yup3 === undefined || yup3 === null ? "#" : yu.push(11);
+                                    let x = [];
+                                    let typeoflink = "";
+                                    try { typeoflink = jsonData.table.rows[num2].c[6].v == 2 ? ".torrent" : "" } catch { };
+                                    for (let i = 0; i < yu.length; i++) {
+                                        x.push('<b><span>🎥' + jsonData.table.rows[num2].c[1].v + jsonData.table.rows[0].c[yu[i]].v + ' x265 - (DD5.1 - 192Kbps)<br>👉 Click to download ' + dlinks + '</span></b><br><br>');
+                                    };
+                              document.getElementById("q2").innerHTML= domainp +'/p/videoplayer.html?url=r'+ num2 +'c9&ql=p'+num6+'n1s&ray='+Id;
+                              
+                              
+                                    let text = "";
+                                    for (let i = 0; i < x.length; i++) {
+                                        text += x[i];
+                                    };
+                                    document.getElementById("q1").innerHTML = text;
+
+                                    let typeoflink2 = jsonData.table.rows[num2].c[2].v.slice(0,13)=="https://drive" ? 'https://docs.google.com/uc?id=' + jsonData.table.rows[num2].c[2].v.slice(32, 65) : jsonData.table.rows[num2].c[2].v ;
+                                    var vsrc =document.getElementById("imdownload");
+                                    vsrc.src = typeoflink2;
+                                    // console.log(quality(2));
+                                });
+                        };
+                        init();
+                    })
+            };
+            init10();
+        };
+
+        const shd = '1P3dHRKvAvIdJICfVNyvrwQdyESw6SKMzH0BmwRfdpU0';
+        const base10 = `https://docs.google.com/spreadsheets/d/${shd}/gviz/tq?`;
+        const she = 'sheet1';
+        const query10 = encodeURIComponent('Select *')
+        const url10 = `${base10}&sheet=${she}&tq=${query10}`
+        document.addEventListener('DOMContentLoaded', init10);
+        function init10() {
+            fetch(url10)
+                .then(res => res.text())
+                .then(rep => {
+                    //Remove additional text and extract only JSON:
+                    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                    var pgid = jsonData.table.rows[1].c[1].v;
+                    const Id = pgid;
+                    const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+                    const Name = 'some';
+                    const query = encodeURIComponent('Select *');
+                    const url = `${base}&sheet=${Name}&tq=${query}`;
+                    function init() {
+                        fetch(url)
+                            .then(res => res.text())
+                            .then(rep => {
+                                const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+                                //jsonData.table.rows[numac].c[4].v
+                                var vdindex = ['GRM STUDIO'];
+                                for (let i = 1; jsonData.table.rows.length > i; i++) {
+                                    vdindex.push(jsonData.table.rows[i].c[0].v);
+                                };
+                                var num2 = 1;
+                                var mtitle = jsonData.table.rows[1].c[1].v;
+                                document.getElementById("title").innerHTML = mtitle;
+                                var dlinks = domainp + "/p/download.html?q=mnweao12p1s" + jsonData.table.rows[1].c[0].v + "nqwetr"
+                                let yu = [];
+                                let yup; try { yup = jsonData.table.rows[num2].c[8].v; } catch { }; yup === undefined || yup === null ? "#" : yu.push(8);
+                                let yup1; try { yup1 = jsonData.table.rows[num2].c[9].v; } catch { }; yup1 === undefined || yup1 === null ? "#" : yu.push(9);
+                                let yup2; try { yup2 = jsonData.table.rows[num2].c[10].v; } catch { }; yup2 === undefined || yup2 === null ? "#" : yu.push(10);
+                                let yup3; try { yup3 = jsonData.table.rows[num2].c[11].v; } catch { }; yup3 === undefined || yup3 === null ? "#" : yu.push(11);
+                                let x = [];
+                                let typeoflink = "";
+                                try { typeoflink = jsonData.table.rows[num2].c[6].v == 2 ? ".torrent" : "" } catch { };
+                                for (let i = 0; i < yu.length; i++) {
+                                    x.push('<b><span>🎥' + jsonData.table.rows[num2].c[1].v + jsonData.table.rows[0].c[yu[i]].v + ' x265 - (DD5.1 - 192Kbps)<br>👉 Click to download ' + dlinks + '</span></b><br><br>');
+                                };
+                          
+                          document.getElementById("q2").innerHTML= domainp +'/p/videoplayer.html?url=r'+ num2 +'c9&ql=pn1s&ray='+Id;
+                          
+                                let text = "";
+                                for (let i = 0; i < x.length; i++) {
+                                    text += x[i];
+                                };
+                                document.getElementById("q1").innerHTML = text;
+                                let typeoflink2 = jsonData.table.rows[num2].c[2].v.slice(0,13)=="https://drive" ? 'https://docs.google.com/uc?id=' + jsonData.table.rows[num2].c[2].v.slice(32, 65) : jsonData.table.rows[num2].c[2].v ;
+                                    var vsrc =document.getElementById("imdownload");
+                                    vsrc.src = typeoflink2;
+                                // console.log(quality(2));
+                            });
+                    };
+                    init();
+                })
+        };
+    </script>
+</body>
+
+</html>

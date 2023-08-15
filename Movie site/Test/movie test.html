@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div>
+    Enter page number:-<br>
+    <input id="pagenum" type="text"><br><br>
+    Enter movie index:-<br>
+    <input id="movieindex"><br><br>
+    <button onclick="load()">SUBMIT</button>
+  </div><br>
+
+  <script>
+    function CopyToClipboard(id) {
+      var r = document.createRange();
+      r.selectNode(document.getElementById(id));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+    };
+    var domainp = "https://allinonestar143.blogspot.com";
+    //num2 =4;
+    function load() {
+      var num6 = Number(document.getElementById("pagenum").value);
+      var num2 = Number(document.getElementById("movieindex").value);
+
+      console.log('hi')
+    };
+
+    const shd = '1P3dHRKvAvIdJICfVNyvrwQdyESw6SKMzH0BmwRfdpU0';
+    const base10 = `https://docs.google.com/spreadsheets/d/${shd}/gviz/tq?`;
+    const she = 'sheet1';
+    const query10 = encodeURIComponent('Select *')
+    const url10 = `${base10}&sheet=${she}&tq=${query10}`
+
+    function init10() {
+      fetch(url10)
+        .then(res => res.text())
+        .then(rep => {
+          //Remove additional text and extract only JSON:
+          const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+          var pgid = jsonData.table.rows[1].c[1].v;
+          const Id = pgid;
+          const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
+          const Name = 'some';
+          const query = encodeURIComponent('Select *');
+          const url = `${base}&sheet=${Name}&tq=${query}`;
+
+          function init() {
+            fetch(url)
+              .then(res => res.text())
+              .then(rep => {
+                const jsonData = JSON.parse(rep.substring(47).slice(0, -2)).table;
+                var vdindex = ['GRM STUDIO'];
+                for (let i = 1; jsonData.rows.length > i; i++) {
+                  vdindex.push(jsonData.rows[i].c[7].v);
+                };
+
+                for (let i = 1; jsonData.rows.length >= i; i++) {
+                  
+                  
+                  setTimeout(function() {
+                    var idas = vdindex[i].slice(vdindex[i].lastIndexOf("?") + 1);
+                    //console.log(idas);
+                    $.ajax({
+                      url: 'https://api.allorigins.win/raw?url=https://vembx.one/embed-' + idas + '.html',
+                      dataType: 'html',
+                      success: function(response) {
+                        var html = $.parseHTML(response);
+                        const myString = String(response);
+                        const urls1 = myString.split('https');
+                        var urlset = [];
+                        var qlsc = [];
+                        //console.log(myString);
+                        myStringd = myString.slice(66, 72);
+                        console.log(myStringd);
+                        if (myStringd == 'center') {
+                          console.log('h')
+                          console.log(jsonData.rows[i].c[0].v,jsonData.rows[i].c[1].v,jsonData.rows[i].c[7].v);
+                        }
+                      }
+                    });
+                  }, 1200 * i);
+                };
+
+                //num2 = vdindex.indexOf(num2);
+                //var mtitle = jsonData.table.rows[num2].c[1].v;
+
+                //console.log(vdindex[1]);
+
+                //init 
+              });
+          };
+          init();
+          //inner scr
+        });
+    };
+    init10();
+  </script>
+</body>
+
+</html>

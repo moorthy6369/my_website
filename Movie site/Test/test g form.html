@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Data</title>
+</head>
+<body>
+  <button id="submitButton">Send Data</button>
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKZDVo4c14XAwcoOhogO5PK77SBn-dzZ4lL36jx7CWHfanhQBH0zehx-BtMuMdDyM/exec';
+    const submitButton = document.getElementById('submitButton');
+    
+    var email = "some string";
+    
+    function post1(){
+      const formData = new FormData();
+      formData.append('email', email);
+      
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.json())
+        .then(data => console.log('Success!', data))
+        .catch(error => console.error('Error!', error.message));
+    };
+  </script>
+</body>
+</html>

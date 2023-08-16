@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <p>Hello world!</p>
+  <script>
+    var myStringd; // Define the variable outside the callback
+    
+    $.ajax({
+      url: 'https://api.allorigins.win/raw?url=https://vembx.one/embed-4lwmr65redar.html',
+      dataType: 'html',
+      success: function(response) {
+        var myString = String(response);
+        myStringd = myString.slice(66, 72); // Assign value to the variable
+        // Perform operations using myStringd
+        console.log("Inside callback:", myStringd);
+        therFunction(); // Call another function that uses myStringd
+      }
+    });
+
+    function therFunction() {
+      // Use myStringd here, which was assigned inside the callback
+      console.log("Outside callback:", myStringd);
+    };
+    
+    
+    async function fetchData() {
+      try {
+        const response = await $.ajax({
+          url: 'https://api.allorigins.win/raw?url=https://vembx.one/embed-4lwmr65redar.html',
+          dataType: 'html'
+        });
+    
+        const myString = String(response);
+        const myStringd = myString.slice(66, 72);
+    
+        console.log("Inside async function:", myStringd);
+        return myStringd; // Return the value
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    }
+    
+    async function main() {
+      const myStringd = await fetchData(); // Use the value outside the async function
+      console.log("Outside async function:", myStringd);
+    }
+    
+    main(); // Call the main function
+  </script>
+</body>
+
+</html>

@@ -2,13 +2,13 @@
  var domainp = "https://allinonestar143.blogspot.com";
  var domainp2 = "https://alonestar3dmodeldownload.on.drv.tw/website/memes-template/";
  var loca = window.location.href;
- //var num2 = Number(loca.slice(loca.lastIndexOf("s") + 1, loca.lastIndexOf("n")));
- //var num6 = Number(loca.slice(loca.lastIndexOf("p") + 1, loca.lastIndexOf("s")));
- num2 = 145;
- num6 = 1;
+ var num2 = Number(loca.slice(loca.lastIndexOf("s") + 1, loca.lastIndexOf("n")));
+ var num6 = Number(loca.slice(loca.lastIndexOf("p") + 1, loca.lastIndexOf("s")));
+ //num2 = 145;
+ //num6 = 1;
 
  function loadidem1() {
-   const shd = '1P3dHRKvAvIdJICfVNyvrwQdyESw6SKMzH0BmwRfdpU0';
+   const shd = '1KkfyQVJlB3RQXOriHQjar4FR9LOKU5EL7mE6wwilzGI';
    const base10 = `https://docs.google.com/spreadsheets/d/${shd}/gviz/tq?`;
    const she = 'sheet1';
    const query10 = encodeURIComponent('Select *')
@@ -114,13 +114,13 @@
                  let typeoflink1 = jsonData.table.rows[num2].c[Number(yu[i])].v.slice(0, 13) == "https://drive" ? " GDrive" : "";
                  // var mlinks = jsonData.table.rows[num2].c[Number(yu[i])].v.slice(0,13)=="https://drive" ? 'https://docs.google.com/uc?id='+jsonData.table.rows[num2].c[Number(yu[i])].v.slice(32, 65)+ '&export=download' : jsonData.table.rows[num2].c[Number(yu[i])].v;
 
-                 let ts = yu[i] == 11 /* || yu[i]==10 || yu[i]==9*/ ;
+                 let ts = yu[i] == 11 /* || yu[i]==10 || yu[i]==9 */;
 
                  var types = "r" + num2 + "c" + Number(yu[i]);
                  var typel = "&ql=p" + num6 + "n1s";
                  let targetl = ts ? '/p/smdownload.html?url=' : '/p/fdownload.html?url=';
                  var mlinks1 = domainp + targetl + types + typel + "&ray=" + Id;
-                 let flink = ts ? "https://shrinkme.io/st?api=2a55bb82d9f1f5c133f762ef25aa71937e7ac9bf&url=" + mlinks1 : mlinks1;
+                 let flink = ts ? "https://linkpays.in/st?api=ae2c703f41ab93875da2f888d86d766f080d830f&url=" + mlinks1 : mlinks1;
                  let locki = ts ? "lock" : "lock open";
                  let targetg = ts ? 'target="_blank"' : "";
                  x.push('<p class="paragraph">' + jsonData.table.rows[num2].c[1].v + jsonData.table.rows[0].c[yu[i]].v + ' x265 - (DD5.1 - 192Kbps)</p><div class="flexc"><a id="lk' + i + '" ' + targetg + ` onclick="ch('` + flink + `',` + i + `)"><p id="dbutton">Download ` + typeoflink1 + '<i class="' + locki + ' icon"></i></p></a></div>');
@@ -179,7 +179,7 @@
                      var typel = "&ql=p" + num6 + "n1s";
                      let targetl = ts ? '/p/smdownload.html?url=' : '/p/fdownload.html?url=';
                      var mlinks1 = domainp + targetl + types + typel + "&ray=" + Id;
-                     let flink = ts ? "https://shrinkme.io/st?api=2a55bb82d9f1f5c133f762ef25aa71937e7ac9bf&url=" + mlinks1 : mlinks1;
+                     let flink = ts ? "https://linkpays.in/st?api=ae2c703f41ab93875da2f888d86d766f080d830f&url=" + mlinks1 : mlinks1;
                      let locki = ts ? "lock" : "lock open";
                      let targetg = ts ? 'target="_blank"' : "";
                      //console.log(mlinks1)

@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post Data</title>
 </head>
+
 <body>
-  <button id="submitButton">Send Data</button>
-  
+  <button id="submitButton" onclick="post1()">Send Data</button>
+
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKZDVo4c14XAwcoOhogO5PK77SBn-dzZ4lL36jx7CWHfanhQBH0zehx-BtMuMdDyM/exec';
+    //const scriptURL = 'https://script.google.com/macros/s/AKfycbxKZDVo4c14XAwcoOhogO5PK77SBn-dzZ4lL36jx7CWHfanhQBH0zehx-BtMuMdDyM/exec';
+    //const scriptURL = 'https://script.google.com/macros/s/AKfycbyCFKdx8YVpBOyI_h_grvuXraInCyyL6gX2Fk_8EMKwAhOdyDP1qJJthcptdmShIUQh/exec';
+    //const scriptURL = '';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxO0iHma3jMwL2UjF3ScvJpgF_Ex2c1IU4u8Z6WtZp8IJygsoMCbk_EakD78NgvdyC3/exec';
     const submitButton = document.getElementById('submitButton');
-    
-    var email = "some string";
-    
-    function post1(){
+
+    var email = 171;
+
+    function post1() {
       const formData = new FormData();
-      formData.append('email', email);
-      
+      formData.append('index', email);
+
       fetch(scriptURL, { method: 'POST', body: formData })
         .then(response => response.json())
         .then(data => console.log('Success!', data))
@@ -26,4 +31,5 @@
     };
   </script>
 </body>
+
 </html>

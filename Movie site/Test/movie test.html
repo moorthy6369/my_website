@@ -36,7 +36,7 @@
       console.log('hi')
     };
 
-    const shd = '1P3dHRKvAvIdJICfVNyvrwQdyESw6SKMzH0BmwRfdpU0';
+    const shd = '1KkfyQVJlB3RQXOriHQjar4FR9LOKU5EL7mE6wwilzGI';
     const base10 = `https://docs.google.com/spreadsheets/d/${shd}/gviz/tq?`;
     const she = 'sheet1';
     const query10 = encodeURIComponent('Select *')
@@ -48,7 +48,12 @@
         .then(rep => {
           //Remove additional text and extract only JSON:
           const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+          
+          //edit sheet id
           var pgid = jsonData.table.rows[1].c[1].v;
+          //edit sheet id
+          
+          
           const Id = pgid;
           const base = `https://docs.google.com/spreadsheets/d/${Id}/gviz/tq?`;
           const Name = 'some';
@@ -81,11 +86,11 @@
                         var urlset = [];
                         var qlsc = [];
                         //console.log(myString);
-                        myStringd = myString.slice(66, 72);
-                        console.log(myStringd);
-                        if (myStringd == 'center') {
-                          console.log('h')
-                          console.log(jsonData.rows[i].c[0].v,jsonData.rows[i].c[1].v,jsonData.rows[i].c[7].v);
+                        myStringd = myString.slice(65, 71);
+                        //console.log(myStringd);
+                        if (myStringd == 'center'|| myString.slice(66, 72) == 'center') {
+                          console.log(jsonData.rows[i].c[0].v);
+                          console.log(jsonData.rows[i].c[1].v);
                         }
                       }
                     });
